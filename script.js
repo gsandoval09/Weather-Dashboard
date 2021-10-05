@@ -1,11 +1,8 @@
 // tell computer what information to get in order to display on screen.
-
-
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const searchBarEl = document.getElementById('current-weather-items');
 const timezone = document.getElementById('time-zone');
-
 const weatherForecastEl = document.getElementById('weather-forecast');
 const currentTempEl = document.getElementById('current-temp');
 
@@ -20,16 +17,14 @@ setInterval(() => {
     const date = time.getDate();
     const day = time.getDay();
     const hour = time.getHours();
-    const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
+    const clock = hour >= 13 ? hour %12: hour
     const minutes = time.getMinutes();
     const ampm = hour >=12 ? 'PM' : 'AM'
 
-         timeEl.innerHTML = (hoursIn12HrFormat < 10? '0'+hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
-
-dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
+         timeEl.innerHTML = (clock < 10? '0'+clock : clock) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
 
 }, 1000);
-
+//need to add latitude and longitude to get accurate weather in that location
 getWeatherData()
 function getWeatherData () {
     navigator.geolocation.getCurrentPosition((success) => {
@@ -50,10 +45,7 @@ function showWeatherData (data){
 
     timezone.innerHTML = data.timezone;
    
-
     
-
-    let otherDayForcast = ''
     data.daily.forEach((day, idx) => {
         if(idx == 0){
             currentTempEl.innerHTML = `

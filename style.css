@@ -1,20 +1,18 @@
 body{
-    background-color: gold;
+    background: gold;
     background:url(https://images.wallpapersden.com/image/download/abstract-shapes-2021-minimalist_bG1lZm6UmZqaraWkpJRmbmdmrWZlbWY.jpg)
 }
 
 .container{
-    padding: 20px 70px;
-    color:rgb(235, 237, 245);
+    padding: 40px 60px;
+    color:white;
 }
 
 .current-info{
     display: flex;
     flex-wrap: wrap;
 }
-.date-container{
-    font-weight: 100;
-}
+
 .date-container .time{
     font-size: 80px;
 }
@@ -22,19 +20,6 @@ body{
 .date-container #am-pm{
     font-size: 30px;
     margin-left: 20px;
-}
-
-.date-container .date{
-    font-size: 30px;
-}
-
-.place-container{
-    text-align: end;
-}
-
-.place-container .time-zone{
-    font-size: 30px;
-    font-weight: 100;
 }
 
 
@@ -46,33 +31,28 @@ body{
     padding:20px;
     border-radius: 10px;
     margin: 10px 0;
-    border: 1px solid #eee;
-}
-
-.current-info .others .weather-item{
-    display: flex;
-    justify-content: space-between;
+    border: 5px solid rgb(0, 0, 0);
 }
 
 
 .future-forecast{
-    background: rgba(24,24,27,0.8);
+    background: orangered;
     padding: 25px;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     display: flex;
-    color:rgb(20, 13, 13);
+    color:black;
     width: 100%;
     align-items: center;
     justify-content: center;
-    overflow-y: hidden;
+    
 }
 
 .future-forecast .today{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eee;
+    border: 5px solid rgb(0, 0, 0);
     border-radius: 10px;
     padding:15px;
     padding-right: 40px;
@@ -102,7 +82,7 @@ body{
     align-items: center;
     justify-content: center;
     margin: 0 10px;
-    border: 1px solid #eee;
+    border: 5px solid rgb(3, 3, 3);
     padding: 15px;
     border-radius: 10px;
     background: rgb(167, 156, 156)
