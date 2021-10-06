@@ -39,7 +39,29 @@ function getWeatherData () {
 
     })
 }
+function searchBar () {
+    var cityName= $("#current-weather-items").val()
+    console.log (cityName)
+    var searchUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
+    $.ajax({
+        url:searchUrl,
+        method:"GET"    
+    })
+.then(function(res){
+var humidity=res.main.humidity
+var pressure=res.main.pressure
+$(".humidity").text(humidity)
 
+
+    console.log(res)
+}) 
+}
+
+$(".search").on("click",function(){
+    searchBar()
+})
+
+//append to page like line 53
 function showWeatherData (data){
     let {humidity, pressure, wind_speed} = data.current;
 
